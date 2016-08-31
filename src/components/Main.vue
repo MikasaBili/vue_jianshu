@@ -40,6 +40,8 @@
 	.vue-main-bottom{
 		border-bottom: 2px solid #d9d9d9;
 		padding-left: 20px;
+		position:fixed;
+		width: 100%;
 	}
 	.vue-main-a{
 		float: left;
@@ -53,6 +55,7 @@
 		margin-bottom: -2px;
 	}
 	.vue-main-search-ul{
+		margin-top:45px;
 		padding:15px 0 0 20px;
 		& li{
 			float: left;

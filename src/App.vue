@@ -5,15 +5,14 @@
   <div class="vue-navbar-w vue-height">
     <navbar></navbar>
   </div>
-   <div class="vue-g vue-m-l">
-  <div class="vue-grow-1 vue-height">
+   <div class="vue-m-l clearfix">
+  <div class="vue-print-fiexd vue-height">
     <print></print>
   </div>
-  <div class="vue-grow-4 vue-height">
+  <div class="vue-height vue-main-left clearfix">
     <main></main>
   </div>
    </div>
-    <router-view></router-view>
 </template>
 
 <script>
