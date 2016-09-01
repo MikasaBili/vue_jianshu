@@ -1,5 +1,5 @@
 <template>
-	<div class="vue-main-bottom">
+	<div class="vue-main-bottom" :style="{ width: mainWidth+'px'}">
 		<ul class="clearfix ">
 			<li  v-for="title in titles">
 				<a class="vue-main-a" v-bind:class="{'vue-main-a-hover':title.status}" href="">{{title.item}}</a>
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+	import EventListener from '../assets/js/EventListener.js'
 	export default{
 		data(){
           return {
@@ -30,9 +31,23 @@
           		{item:"七日热门"},
           		{item:"三十日热门"},
           		{item:"有奖活动"},
-          	]
+          	],
+          	mainWidth: (document.body.clientWidth - 170)*0.75 <= 1000 ? (document.body.clientWidth - 170)*0.75:1000
           }
-		}
+		},
+		methods:{
+			changeWidth:function () {
+				let clientWidth = (document.body.clientWidth - 170)*0.75;
+				if (clientWidth > 1000) {
+				this.mainWidth = 1000;
+				}else{
+				this.mainWidth = clientWidth;	
+				}
+			}
+		},
+		ready() {
+     		EventListener.listen(window, 'resize', this.changeWidth)
+    	}
 	}
 </script>
 
@@ -41,7 +56,6 @@
 		border-bottom: 2px solid #d9d9d9;
 		padding-left: 20px;
 		position:fixed;
-		width: 100%;
 	}
 	.vue-main-a{
 		float: left;

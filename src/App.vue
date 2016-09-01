@@ -9,7 +9,7 @@
   <div class="vue-print-fiexd vue-height">
     <print></print>
   </div>
-  <div class="vue-height vue-main-left clearfix">
+  <div id="main_width" class="vue-height vue-main-left clearfix">
     <main></main>
   </div>
    </div>
