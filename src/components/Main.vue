@@ -96,7 +96,7 @@
           		like:"93",
           		spare:"",
           		},
-          	{item:"当哈佛凌晨四点半是个谎言，我们的努力还有什么意义？",
+          		{item:"当哈佛凌晨四点半是个谎言，我们的努力还有什么意义？",
           		link:require('src/assets/body01.jpg'),
           		author:"斜杠少年白",
           		time:"12",

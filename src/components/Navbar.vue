@@ -1,6 +1,6 @@
 <template>
 	<div class="vue-navbar-top">
-		<a href="" @mouseleave="evtSideLeave" @mouseenter="evtSideEnter($index,item.title)" class="vnt-a" v-bind:class="{'vnt-a-hover': item.title === '首页' }" v-for="item in items">{{ item.title }}</a>
+		<a href="" @mouseleave="evtSideLeave" @mouseenter="evtSideEnter($index,item.title)" class="vnt-a" v-bind:class="{'vnt-a-hover': item.title === '首页'}" v-for="item in items"><i class="iconfont" :class="item.icon"></i>{{ item.title }}</a>
 		<div class="vue-navbar-right" :style="{top: Top + 'px'}" v-show="Status" transition="expand">
 			<div class="tooltip"></div>
 			<div class="inner">{{ Title }}</div>
@@ -18,10 +18,10 @@
 				Top:'',
 				Title:'',
 				items:[
-				{title:'首页'},
-				{title:'专题'},
-				{title:'Demo'},
-				{title:'正在施工...'},
+				{title:'首页',icon:'icon-home'},
+				{title:'专题',icon:'icon-zhuanti'},
+				{title:'Demo',icon:'icon-demo'},
+				{title:'正在施工...',icon:'icon-caidan-copy'},
 				],
 			}
 		},
@@ -30,7 +30,7 @@
            	 this.Status = false;
            },
            evtSideEnter:function (e,title) {
-             this.Top = e*45+8;
+             this.Top = e*45+10;
              this.Title = title;
            	 this.Status = true;
            }
@@ -92,6 +92,7 @@
 		border-radius: 4px;
 		white-space:nowrap;
 		background-color: #000;
+		line-height: 12px;
 	}
 }
 
