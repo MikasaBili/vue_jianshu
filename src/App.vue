@@ -9,20 +9,21 @@
   <div class="vue-print-fiexd vue-height">
     <print></print>
   </div>
+
   <div id="main_width" class="vue-height vue-main-left clearfix">
-    <main></main>
+    <router-view>
+    </router-view>
   </div>
    </div>
+
 </template>
 
 <script>
    import navbar from './components/navbar'
-   import main from './components/main'
    import print from './components/print'
    export default{
      components: {
       navbar,
-      main,
       print
      }
    }

@@ -1,6 +1,6 @@
 <template>
 	<div class="vue-navbar-top">
-		<a href="" @mouseleave="evtSideLeave" @mouseenter="evtSideEnter($index,item.title)" class="vnt-a" v-bind:class="{'vnt-a-hover': item.title === '首页'}" v-for="item in items"><i class="iconfont" :class="item.icon"></i>{{ item.title }}</a>
+		<a v-link="{name:item.link}" @click="changeBack(item.title)" @mouseleave="evtSideLeave" @mouseenter="evtSideEnter($index,item.title)" class="vnt-a" v-bind:class="{'vnt-a-hover': item.title === BackTitle}" v-for="item in items"><i class="iconfont" :class="item.icon"></i>{{ item.title }}</a>
 		<div class="vue-navbar-right" :style="{top: Top + 'px'}" v-show="Status" transition="expand">
 			<div class="tooltip"></div>
 			<div class="inner">{{ Title }}</div>
@@ -17,11 +17,12 @@
 				Status:false,
 				Top:'',
 				Title:'',
+				BackTitle:'首页',
 				items:[
-				{title:'首页',icon:'icon-home'},
-				{title:'专题',icon:'icon-zhuanti'},
-				{title:'Demo',icon:'icon-demo'},
-				{title:'正在施工...',icon:'icon-caidan-copy'},
+				{title:'首页',icon:'icon-home',link:'home'},
+				{title:'专题',icon:'icon-zhuanti',link:'special'},
+				{title:'Demo',icon:'icon-demo',link:'demo'},
+				{title:'正在施工...',icon:'icon-caidan-copy',link:'loading'},
 				],
 			}
 		},
@@ -33,6 +34,9 @@
              this.Top = e*45+10;
              this.Title = title;
            	 this.Status = true;
+           },
+           changeBack:function (title) {
+             this.BackTitle = title
            }
         }
 
